@@ -1,253 +1,546 @@
 # 🍽️ **BhookExpress – Full-Stack Food Delivery Web App**
 
-A modern **food delivery platform** built with the **MERN Stack** (MongoDB, Express, React, Node.js).
-Customers can explore menus, add items to their cart, place orders, track delivery status, and make secure payments — all in one responsive web app.
-Includes a **dedicated Admin Panel** for managing menu items and orders, and multiple **encryption layers** to ensure user and payment security.
+> A modern, feature-rich **food delivery platform** built with the **MERN Stack** (MongoDB, Express, React, Node.js). Order delicious meals, track deliveries in real-time, and enjoy secure payments all in one responsive app.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js](https://img.shields.io/badge/Node.js-v20+-green.svg)](https://nodejs.org)
+[![React](https://img.shields.io/badge/React-18.0+-blue.svg)](https://react.dev)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green.svg)](https://www.mongodb.com/cloud/atlas)
 
 🚀 **Live Demo:** [food-del-frontend-7vmr.onrender.com](https://food-del-frontend-7vmr.onrender.com)
 
 ---
 
-## 🔍 **Features**
+## 📋 **Table of Contents**
 
-### 👤 User Side
+- [Features](#-features)
+- [Tech Stack](#️-tech-stack)
+- [Project Structure](#-project-structure)
+- [Getting Started](#-getting-started)
+- [API Endpoints](#-api-endpoints)
+- [Usage Guide](#-usage-guide)
+- [Payment Integration](#-payment-integration)
+- [Troubleshooting](#-troubleshooting)
+- [Deployment](#-deployment)
+- [Contributing](#-contributing)
+- [License](#-license)
 
-* 🍔 **Browse & Search:** View food items by category or search by dish name
-* 🔎 **Smart Search:** Real-time food search with auto-scroll to results
-* 🛒 **Smart Cart:** Add items to cart (local + server sync)
-* 📦 **Order Tracking:** Real-time status updates
-* 💳 **Secure Payments:** Integrated payment gateway (Stripe)
-* 🔐 **User Authentication & Encryption:**
+---
 
-  * Passwords encrypted in backend
-  * Sensitive data encrypted in frontend before API calls
-  * Token-based authentication with JWT
-  * LocalStorage cart data encrypted for extra security
-* 📱 **Responsive UI:** Optimized for mobile & desktop
-* ℹ️ **About Us Section:** Learn about BhookExpress mission and values
-* ⭐ **Why Choose Us:** 6 key features highlighting service benefits
-* 🎯 **How It Works:** 4-step ordering process visualization
-* 🎁 **Special Offers:** Promotional deals and discounts
-* 📱 **Mobile-Friendly Navbar:** Hamburger menu for seamless mobile navigation
+## ✨ **Features**
 
-### 🛠 Admin Panel
+### 👤 **User Features**
 
-* 📑 Add / edit / delete menu items
-* 📦 Manage customer orders (update status)
-* 📊 View sales & order analytics
+#### 🔍 **Search & Browse**
+- 🍔 Browse food items by category (Salads, Rolls, Deserts, etc.)
+- 🔎 **Real-time search** with auto-scroll to results
+- Smart category filtering with typo handling (e.g., "deserts" → "desserts")
+- Merge backend items seamlessly with local assets
+
+#### 🛒 **Shopping Cart**
+- Add/remove items with real-time quantity updates
+- **Smart Cart Merge**: Local cart syncs with server after login
+- Cart persists across sessions
+- Cart automatically clears after successful payment
+- Restore cart items if payment is cancelled
+
+#### 💳 **Payment & Orders**
+- Integrated **Razorpay** payment gateway
+- Multiple payment method support (Card, UPI, Wallet, etc.)
+- **Secure payment verification** with Razorpay API
+- Real-time payment status confirmation
+- Order confirmation banner with success message
+- Track orders in real-time with status updates
+
+#### 🔐 **Security & Authentication**
+- JWT token-based authentication
+- Passwords encrypted in backend
+- Sensitive data encrypted before API calls
+- LocalStorage cart data encryption
+- Secure payment verification
+- Auto-logout on token expiration
+
+#### 📱 **User Interface**
+- **Fully responsive** design (mobile, tablet, desktop)
+- Mobile hamburger navigation menu
+- Smooth animations and transitions
+- User profile dropdown with logout
+- Order history in "My Orders" page
+- Payment success/failure notifications
+
+#### 🎨 **Home Page Sections**
+- **Hero Banner**: Eye-catching call-to-action
+- **Explore Menu**: Category selector with smooth interactions
+- **About Us**: Company mission, achievements, testimonials
+- **Why Choose Us**: 6 key service benefits
+- **How It Works**: 4-step ordering process
+- **Special Offers**: Promotional deals and discounts
+- **Footer**: Quick links and contact information
+
+### 🛠️ **Admin Panel Features**
+
+- ➕ Add new food items with images
+- ✏️ Edit existing menu items
+- 🗑️ Delete items from menu
+- 📦 View all customer orders
+- 📊 Update order status (Pending → Processing → Out for Delivery → Delivered)
+- 🔍 Track all orders across the platform
+- 📈 View order analytics
 
 ---
 
 ## 🛠️ **Tech Stack**
 
-### Frontend (User + Admin):
+### **Frontend (User & Admin)**
+| Technology | Purpose |
+|-----------|---------|
+| React.js 18 | UI Framework |
+| Vite | Build tool & dev server |
+| React Router 7 | Client-side routing |
+| Context API | Global state management |
+| Axios | HTTP client |
+| CSS Modules | Styling with scoped CSS |
+| Razorpay | Payment gateway |
 
-* React.js 18 (Vite for fast builds)
-* React Router 7
-* Context API for global state management
-* Axios for API calls
-* Crypto-JS for frontend encryption (4-layer security)
-* Custom CSS for styling
+### **Backend API**
+| Technology | Purpose |
+|-----------|---------|
+| Node.js | JavaScript runtime |
+| Express.js | Web framework |
+| MongoDB | NoSQL database |
+| Mongoose | MongoDB ODM |
+| JWT | Authentication |
+| Razorpay SDK | Payment processing |
+| Bcryptjs | Password hashing |
+| CORS | Cross-origin requests |
 
-### Backend API:
-
-* Node.js + Express.js
-* MongoDB (Mongoose)
-* JWT Authentication
-* Backend data encryption for sensitive info
-* Stripe payment integration
-* Hosted on Render
-
-### Other Tools:
-
-* LocalStorage for offline cart persistence (encrypted)
-* RESTful API architecture
-* CORS & security middleware
+### **Deployment & DevOps**
+| Service | Purpose |
+|---------|---------|
+| Render | Backend hosting |
+| Vercel/Netlify | Frontend hosting |
+| MongoDB Atlas | Cloud database |
+| Razorpay | Payment gateway |
 
 ---
 
-### 🌟 **Highlights**
+## 📂 **Project Structure**
 
-* **Smart Search:** Real-time dish search with automatic page scroll to results
-* **Smart Cart Merge:** Local cart items automatically sync with server after login
-* **Dynamic Home Page:** Hero section, category explorer, about us, testimonials, and special offers
-* **Responsive Design:** Fully optimized for desktop, tablet, and mobile devices
-* **Admin Dashboard:** Manage menu items & orders in real time
-* **Secure Authentication:** JWT-based authentication with encrypted credentials
-* **4-Layer Encryption:** Frontend + backend data encryption, secure JWT, encrypted local storage
-* **Full-Stack Deployment:** Deployed on Render with a production-ready build
-* **Scalable Architecture:** Clean separation of frontend, admin, and backend
-* **Category Management:** Smart category filtering with typo handling (e.g., deserts → desserts)
+```
+food-del-main/
+│
+├── 📁 frontend/                    # React customer app (Vite)
+│   ├── src/
+│   │   ├── components/             # Reusable React components
+│   │   │   ├── Navbar/
+│   │   │   ├── Footer/
+│   │   │   ├── FoodDisplay/
+│   │   │   ├── ExploreMenu/
+│   │   │   ├── Hero/
+│   │   │   ├── AboutUs/
+│   │   │   ├── WhyChooseUs/
+│   │   │   ├── HowItWorks/
+│   │   │   └── SpecialOffers/
+│   │   ├── pages/                  # Page components
+│   │   │   ├── Home/
+│   │   │   ├── Cart/
+│   │   │   ├── PlaceOrder/
+│   │   │   ├── MyOrders/
+│   │   │   └── Verify/
+│   │   ├── context/                # Global state (StoreContext)
+│   │   ├── assets/                 # Images, icons, data
+│   │   └── index.css               # Global styles
+│   ├── .env.example                # Environment variables template
+│   ├── vite.config.js              # Vite configuration
+│   └── package.json                # Dependencies
+│
+├── 📁 admin/                       # React admin dashboard (Vite)
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Navbar/
+│   │   │   └── Sidebar/
+│   │   ├── pages/
+│   │   │   ├── Add/                # Add food items
+│   │   │   ├── List/               # View/edit items
+│   │   │   └── Orders/             # Manage orders
+│   │   └── assets/
+│   ├── .env.example
+│   ├── vite.config.js
+│   └── package.json
+│
+├── 📁 Backend/                     # Node.js + Express API
+│   ├── config/
+│   │   └── db.js                   # MongoDB connection
+│   ├── controllers/
+│   │   ├── userController.js       # Auth & user endpoints
+│   │   ├── foodController.js       # Food items endpoints
+│   │   ├── cartController.js       # Cart management
+│   │   └── orderController.js      # Orders & payments
+│   ├── models/
+│   │   ├── userModel.js            # User schema
+│   │   ├── foodModel.js            # Food schema
+│   │   └── orderModel.js           # Order schema
+│   ├── middleware/
+│   │   └── auth.js                 # JWT authentication
+│   ├── routes/
+│   │   ├── userRoute.js
+│   │   ├── foodRoute.js
+│   │   ├── cartRoute.js
+│   │   └── orderRoute.js
+│   ├── .env.example                # Environment variables template
+│   ├── server.js                   # Entry point
+│   └── package.json                # Dependencies
+│
+├── 📁 uploads/                     # File storage
+├── 📄 README.md                    # Project documentation
+├── 📄 SETUP.md                     # Detailed setup guide
+├── 📄 GITHUB_PUSH_GUIDE.md        # GitHub push instructions
+├── 📄 .gitignore                   # Git ignore rules
+└── 📄 LICENSE                      # MIT License
+```
 
 ---
 
 ## 🚀 **Getting Started**
 
-### Prerequisites
-- Node.js (v20 or higher)
-- npm or yarn package manager
-- MongoDB database (local or cloud)
-- Stripe account for payment processing
+### **Prerequisites**
 
-### Installation
+Before you start, ensure you have:
+- **Node.js** v20 or higher - [Download](https://nodejs.org)
+- **npm** or **yarn** package manager
+- **MongoDB** (local or [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) cloud)
+- **Git** - [Download](https://git-scm.com)
+- **Razorpay Account** - [Sign up](https://razorpay.com)
 
-1. **Clone the repository:**
+### **Quick Setup (3 Steps)**
+
+1. **Clone & Install**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/YOUR_USERNAME/food-del-main.git
    cd food-del-main
+   
+   # Backend
+   cd Backend && npm install && cd ..
+   
+   # Frontend
+   cd frontend && npm install && cd ..
+   
+   # Admin
+   cd admin && npm install && cd ..
    ```
 
-2. **Backend Setup:**
+2. **Configure Environment**
    ```bash
-   cd Backend
-   npm install
-   # Create .env file with required environment variables
-   npm start
+   # Backend/.env
+   cp Backend/.env.example Backend/.env
+   # Edit Backend/.env with your credentials
+   
+   # Frontend/.env
+   cp frontend/.env.example frontend/.env
+   
+   # Admin/.env
+   cp admin/.env.example admin/.env
    ```
 
-3. **Frontend Setup:**
+3. **Run All Services**
    ```bash
-   cd frontend
-   npm install
-   npm run dev
+   # Terminal 1: Backend
+   cd Backend && npm run server
+   
+   # Terminal 2: Frontend
+   cd frontend && npm run dev
+   
+   # Terminal 3: Admin
+   cd admin && npm run dev
    ```
 
-4. **Admin Panel Setup:**
-   ```bash
-   cd admin
-   npm install
-   npm run dev
-   ```
+### **Detailed Setup**
+
+For detailed installation instructions, see [SETUP.md](SETUP.md)
 
 ---
 
 ## 🔧 **Environment Variables**
 
-### Backend (.env):
-```
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret_key
-STRIPE_SECRET_KEY=your_stripe_secret_key
+### **Backend (`Backend/.env`)**
+```env
+# Database
+MONGO_URI=mongodb+srv://user:password@cluster.mongodb.net/food-del
+
+# Authentication
+JWT_SECRET=your_super_secret_key_min_32_characters
+
+# Razorpay Payment Gateway
+RAZORPAY_KEY_ID=your_razorpay_key_id
+RAZORPAY_KEY_SECRET=your_razorpay_key_secret
+
+# Server
 PORT=4000
+NODE_ENV=development
+
+# URLs
+FRONTEND_URL=http://localhost:5173
+ADMIN_URL=http://localhost:5174
 ```
 
-### Frontend & Admin (.env):
-```
+### **Frontend (`frontend/.env`)**
+```env
 VITE_API_URL=http://localhost:4000
+# Production: https://your-backend-url.com
 ```
 
----
-
-## 📱 **Usage**
-
-1. **Browse Menu:** Visit the home page and explore dishes by category
-2. **Search:** Use the search icon in navbar to find dishes by name
-3. **Add to Cart:** Click on any dish to view details and add to cart
-4. **Checkout:** Proceed to cart and complete your order
-5. **Track Order:** View real-time order status in "My Orders"
-
----
-
-## 🛠️ **Project Structure**
-
-```
-food-del-main/
-├── frontend/           # React customer app (Vite)
-├── admin/              # React admin dashboard (Vite)
-├── Backend/            # Node.js + Express API
-│   ├── config/         # Database configuration
-│   ├── controllers/    # Route handlers
-│   ├── models/         # Database schemas
-│   ├── middleware/     # Auth & custom middleware
-│   ├── routes/         # API endpoints
-│   └── server.js       # Main server file
-├── uploads/            # File storage directory
-├── README.md           # Project documentation
-└── .gitignore          # Git ignore rules
+### **Admin (`admin/.env`)**
+```env
+VITE_API_URL=http://localhost:4000
+# Production: https://your-backend-url.com
 ```
 
 ---
 
 ## 🔌 **API Endpoints**
 
-### User Authentication
-- `POST /api/user/register` - Register new user
-- `POST /api/user/login` - User login
-- `GET /api/user/profile` - Get user profile
+### **🔐 Authentication**
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/user/register` | Register new user |
+| POST | `/api/user/login` | User login |
+| GET | `/api/user/profile` | Get user profile |
 
-### Food Items
-- `GET /api/food/list` - Get all food items
-- `GET /api/food/:id` - Get specific food item
+### **🍔 Food Items**
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/food/list` | Get all food items |
+| GET | `/api/food/:id` | Get specific food item |
+| POST | `/api/food/add` | Add new item (Admin) |
+| POST | `/api/food/remove` | Remove item (Admin) |
 
-### Cart Management
-- `POST /api/cart/add` - Add item to cart
-- `POST /api/cart/remove` - Remove item from cart
-- `POST /api/cart/get` - Get cart items
+### **🛒 Cart Management**
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/cart/add` | Add item to cart |
+| POST | `/api/cart/remove` | Remove item from cart |
+| POST | `/api/cart/get` | Get cart items |
 
-### Orders
-- `POST /api/order/place` - Place new order
-- `GET /api/order/userorders` - Get user's orders
-- `GET /api/order/list` - Get all orders (admin)
-- `POST /api/order/status` - Update order status (admin)
+### **📦 Orders**
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/order/place` | Create order |
+| POST | `/api/order/verify` | Verify Razorpay payment |
+| POST | `/api/order/cancel` | Cancel unpaid order |
+| GET | `/api/order/userorders` | Get user's paid orders |
+| GET | `/api/order/list` | Get all orders (Admin) |
+| POST | `/api/order/status` | Update order status (Admin) |
 
-### Admin
-- `POST /api/food/add` - Add new food item
-- `POST /api/food/remove` - Remove food item
-- `POST /api/food/list` - Get all food items for admin
+---
+
+## 💳 **Payment Integration**
+
+### **Razorpay Features**
+
+✅ **Multiple Payment Methods**
+- Credit/Debit Cards
+- UPI
+- Digital Wallets
+- Netbanking
+- BNPL Options
+
+✅ **Payment Security**
+- PCI DSS compliant
+- 3D Secure authentication
+- Encrypted transactions
+- Fraud detection
+
+✅ **Smart Payment Handling**
+- Real-time payment verification
+- Order confirmation on successful payment
+- Automatic order deletion on payment failure
+- Cart restoration if payment is cancelled
+- Clear error messages with retry options
+
+✅ **Payment Status Tracking**
+- "✓ Paid" badge on confirmed orders
+- Success/failure notifications
+- Order confirmation banner with details
+- Real-time order status updates
+
+---
+
+## 📱 **Usage Guide**
+
+### **For Customers**
+
+1. **Sign Up/Login**
+   - Visit http://localhost:5173
+   - Create account or login
+   - Cart data automatically syncs
+
+2. **Browse & Search**
+   - Explore menu by categories
+   - Use search to find specific dishes
+   - Results auto-scroll into view
+
+3. **Add to Cart & Checkout**
+   - Add items to cart
+   - Cart persists across sessions
+   - Proceed to checkout
+   - Fill delivery details
+
+4. **Payment**
+   - Choose payment method
+   - Razorpay modal opens
+   - Enter payment details
+   - Get instant confirmation
+
+5. **Track Order**
+   - Go to "My Orders"
+   - See order status
+   - Track real-time delivery
+
+### **For Admin**
+
+1. **Login to Admin Panel**
+   - Visit http://localhost:5174
+   - Use admin credentials
+
+2. **Manage Menu**
+   - Add new food items with images
+   - Edit existing items
+   - Delete items from menu
+
+3. **Manage Orders**
+   - View all customer orders
+   - Update order status
+   - Track order analytics
 
 ---
 
 ## 🐛 **Troubleshooting**
 
-### Frontend Issues
+### **Frontend Issues**
 
-**Q: Search functionality not working?**
-- A: Make sure the backend API is running and reachable
-- Check browser console for errors
-- Verify VITE_API_URL in .env matches backend URL
+| Issue | Solution |
+|-------|----------|
+| Search not working | Verify backend is running, check VITE_API_URL in .env |
+| Cart items lost after login | Clear localStorage, check cart merge logic |
+| Mobile menu not opening | Clear browser cache, hard refresh (Ctrl+Shift+R) |
+| Payment modal not appearing | Check Razorpay script in index.html, verify keys |
+| Form not clearing after payment | Restart frontend server |
 
-**Q: Cart items disappearing after login?**
-- A: This should be fixed with the smart cart merge feature
-- Clear localStorage and refresh the page
-- Check browser developer tools → Application → LocalStorage
+### **Payment Issues**
 
-**Q: Mobile menu not opening?**
-- A: Ensure CSS is properly loaded (check Network tab)
-- Clear browser cache and hard refresh (Ctrl+Shift+R)
+| Issue | Solution |
+|-------|----------|
+| "Error creating order" | Verify Razorpay keys, check backend logs |
+| "Error verifying payment" | Ensure backend can reach Razorpay API, check API keys |
+| Order saved but payment failed | Payment properly gets deleted, retry payment |
+| Cart not restored on cancellation | Check cart restoration logic in backend |
 
-### Backend Issues
+### **Backend Issues**
 
-**Q: MongoDB connection error?**
-- A: Verify MONGO_URI in .env is correct
-- Check if MongoDB service is running
-- Confirm network access if using MongoDB Atlas
+| Issue | Solution |
+|-------|----------|
+| MongoDB connection error | Verify MONGO_URI, ensure MongoDB is running/Atlas accessible |
+| Port already in use | Change PORT in .env or kill process using port 4000 |
+| JWT token issues | Verify JWT_SECRET is set and consistent |
+| Razorpay API error | Check API keys, verify Razorpay account is active |
 
-**Q: Stripe payment failing?**
-- A: Verify STRIPE_SECRET_KEY is correct
-- Check Stripe API keys from your dashboard
-- Ensure Stripe account is in live or test mode as needed
+### **Database Issues**
+
+| Issue | Solution |
+|-------|----------|
+| Database not initializing | Ensure MongoDB is running, check connection string |
+| Data not persisting | Verify MongoDB Atlas network access, check firewall |
 
 ---
 
-## 📞 **Contact & Support**
+## 🚀 **Deployment**
 
-**Email:** contact@bhookexpress.com  
-**Phone:** +91-9142111111
+### **Deploy Backend (Render)**
+
+1. Push code to GitHub
+2. Connect GitHub repo to Render
+3. Set environment variables:
+   ```
+   MONGO_URI=your_mongo_uri
+   JWT_SECRET=your_secret
+   RAZORPAY_KEY_ID=your_key
+   RAZORPAY_KEY_SECRET=your_secret
+   ```
+4. Deploy!
+
+**Deployed URL:** `https://your-app.onrender.com`
+
+### **Deploy Frontend (Vercel/Netlify)**
+
+1. Connect GitHub repo
+2. Set environment variable:
+   ```
+   VITE_API_URL=https://your-backend.onrender.com
+   ```
+3. Deploy!
+
+**Vercel URL:** `https://your-app.vercel.app`
+
+### **Deploy Admin (Vercel/Netlify)**
+
+Same as frontend with same API URL
 
 ---
 
-## 📝 **License**
+## 🤝 **Contributing**
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+### **Code Style**
+- Use consistent naming conventions
+- Add comments for complex logic
+- Follow existing code structure
+- Test before submitting PR
+
+---
+
+## 📄 **License**
+
+This project is licensed under the **MIT License** - see [LICENSE](LICENSE) file for details.
+
+---
+
+## 📞 **Support & Contact**
+
+- **Email:** contact@bhookexpress.com
+- **Phone:** +91-9142111111
+- **Issues:** GitHub Issues
+- **Documentation:** [SETUP.md](SETUP.md), [GITHUB_PUSH_GUIDE.md](GITHUB_PUSH_GUIDE.md)
 
 ---
 
 ## 🙏 **Acknowledgments**
 
-- BhookExpress team for developing this platform
-- MERN Stack community for excellent tools and documentation
+- MERN Stack community for excellent tools
+- MongoDB for database solution
+- Razorpay for payment integration
+- React community for amazing library
 - All contributors and testers
 
 ---
 
+## 📊 **Key Statistics**
+
+- ✅ **100% Responsive** - Works on all devices
+- ✅ **Real-time Search** - Instant results with auto-scroll
+- ✅ **Secure Payments** - Razorpay integrated with verification
+- ✅ **Smart Cart** - Syncs local & server data
+- ✅ **Full Admin Panel** - Complete order & menu management
+- ✅ **Production Ready** - Deployed and live
+
+---
+
 **Made with ❤️ by BhookExpress Team**
+
+*Last Updated: May 2026*
