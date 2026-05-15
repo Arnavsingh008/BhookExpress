@@ -1,0 +1,140 @@
+@keyframes fadeIn {
+    0%{
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100%{
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    0%{
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    100%{
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+
+.hero{
+    height: 34vw;
+    min-height: 400px;
+    margin: 30px auto;
+    background-image: url('/header_img.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+}
+
+.header_contents{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5vw;
+    max-width: 50%;
+    padding: 3vw 6vw;
+    animation: slideIn 0.8s ease-out;
+    flex: 1;
+}
+
+.header_contents > h2 {
+    font-weight: 700;
+    color: white;
+    font-size: max(4.5vw, 28px);
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header_contents > p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1vw;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.header_contents > button {
+    background: #ff6347;
+    color: white;
+    font-size: max(1vw, 14px);
+    border: none;
+    font-weight: 600;
+    padding: 1vw 2.3vw;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 99, 71, 0.3);
+}
+
+.header_contents > button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 99, 71, 0.5);
+}
+
+@media (max-width:1050px) {
+    .hero {
+        height: 40vw;
+    }
+    
+    .header_contents{
+        max-width: 55%;
+    }
+}
+
+@media (max-width:750px) {
+    .hero {
+        height: 50vw;
+        min-height: 350px;
+        background-position: right bottom;
+        background-size: 60% auto;
+    }
+
+    .header_contents {
+        max-width: 60%;
+        padding-left: 4vw;
+    }
+
+    .header_contents h2 {
+        font-size: max(6vw, 22px);
+    }
+
+    .header_contents p {
+        display: none;
+    }
+
+    .header_contents button {
+        padding: 2vw 4vw;
+    }
+}
+
+@media (max-width:500px) {
+    .hero {
+        height: 60vw;
+        background-size: 80% auto;
+    }
+
+    .header_contents {
+        max-width: 70%;
+        padding-left: 3vw;
+        gap: 1vw;
+    }
+
+    .header_contents h2 {
+        font-size: max(7vw, 18px);
+    }
+
+    .header_contents button {
+        padding: 2.5vw 5vw;
+        font-size: 12px;
+    }
+}

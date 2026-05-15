@@ -1,0 +1,125 @@
+# ==========================================
+# DEPENDENCIES & NODE MODULES
+# ==========================================
+node_modules/
+vendor/
+bower_components/
+package-lock.json
+yarn.lock
+
+# ==========================================
+# ENVIRONMENT VARIABLES & SECRETS
+# ==========================================
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+config/secrets.yml
+.env.private
+
+# ==========================================
+# BUILD & DIST FOLDERS
+# ==========================================
+dist/
+build/
+out/
+.next/
+.vite/
+coverage/
+*.tgz
+
+# ==========================================
+# LOG FILES
+# ==========================================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ==========================================
+# OS-SPECIFIC FILES
+# ==========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ==========================================
+# IDE & EDITOR FILES
+# ==========================================
+.vscode/
+.idea/
+.project
+.classpath
+.c9/
+*.sublime-workspace
+*.sublime-project
+*.swp
+*.swo
+*~
+.vim/
+.history/
+.env.*.swp
+.env.*.swo
+
+# ==========================================
+# TESTING & COVERAGE
+# ==========================================
+coverage/
+.nyc_output/
+.mocha_output/
+jest-coverage/
+
+# ==========================================
+# UPLOADS & TEMPORARY FILES
+# ==========================================
+uploads/
+tmp/
+temp/
+*.tmp
+*.bak
+*.cache
+
+# ==========================================
+# DATABASE & BACKUP FILES
+# ==========================================
+*.db
+*.sqlite
+*.sqlite3
+*.backup
+*.backup.sql
+
+# ==========================================
+# SYSTEM FILES
+# ==========================================
+.AppleDouble
+.LSOverride
+.TemporaryItems
+.VolumeIcon.icns
+.env.production
+.env.staging
+
+# ==========================================
+# VITE & BUILD TOOLS
+# ==========================================
+dist-ssr/
+*.local
+
+# ==========================================
+# MISC
+# ==========================================
+.editorconfig
+*.pid
+*.seed
+*.pid.lock
+.cache
+.parcel-cache
+.eslintcache

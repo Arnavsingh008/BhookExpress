@@ -1,0 +1,96 @@
+.whyChooseUs {
+    max-width: 1140px;
+    margin: 60px auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.whyChooseUs h2 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: 700;
+}
+
+.brandName {
+    background: linear-gradient(135deg, #ff6347, #ff4500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+.featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.featureCard {
+    background: linear-gradient(135deg, #fff9f7, #fffaf8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #ffebdd;
+}
+
+.featureCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(255, 99, 71, 0.15);
+    border-color: #ff6347;
+}
+
+.icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.featureCard h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.featureCard p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .whyChooseUs h2 {
+        font-size: 32px;
+    }
+
+    .featuresGrid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .featureCard {
+        padding: 20px;
+    }
+
+    .icon {
+        font-size: 40px;
+    }
+}

@@ -1,0 +1,236 @@
+.myOrders {
+    margin: 50px 0px;
+}
+
+.confirmationBanner {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    border: 2px solid #28a745;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 30px;
+    animation: slideDown 0.5s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.confirmationContent {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.checkmark {
+    font-size: 28px;
+    color: #28a745;
+    flex-shrink: 0;
+}
+
+.confirmationContent h3 {
+    margin: 0;
+    color: #155724;
+    font-size: 18px;
+}
+
+.confirmationContent p {
+    margin: 5px 0 0 0;
+    color: #155724;
+    font-size: 14px;
+}
+
+.dismissBtn {
+    margin-left: auto;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #155724;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.dismissBtn:hover {
+    transform: scale(1.2);
+}
+
+.noOrders {
+    text-align: center;
+    padding: 40px 20px;
+    color: #999;
+}
+
+.noOrders p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.myOrders .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.myOrdersOrder {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr;
+    align-items: center;
+    gap: 30px;
+    font-size: 14px;
+    padding: 15px 20px;
+    color: #454545;
+    border: 2px solid #ff6347;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.myOrdersOrder img {
+    width: 50px;
+}
+
+.orderDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.orderDetails p {
+    margin: 0;
+    font-size: 13px;
+    color: #555;
+}
+
+.statusWrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.statusIcon {
+    color: #ff6347;
+    font-size: 12px;
+}
+
+.statusText {
+    color: #ff6347;
+    font-weight: 500;
+}
+
+.paidBadge {
+    background: #d4edda;
+    color: #28a745;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: auto;
+}
+
+.trackBtn {
+    border: 1px solid #454545;
+    padding: 10px 15px;
+    border-radius: 4px;
+    background-color: #ffe1e1;
+    cursor: pointer;
+    color: #454545;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.trackBtn:hover {
+    background-color: #ff6347;
+    color: white;
+    border-color: #ff6347;
+}
+/*
+
+:root .my-orders-order button{
+    border: 1px solid tomato;
+    background-color: black;
+    color: white;
+}
+
+.lightcolors .my-orders-order button{
+    border: 1px solid #454545;
+    background-color: #ffe1e1;
+    color: #454545
+}
+
+
+:root .my-orders-order p b,
+:root .my-orders-order{
+    color: white;
+}
+
+.lightcolors .my-orders-order p b,
+.lightcolors .my-orders-order{
+    color: #454545;
+}
+
+
+:root .myordersp {
+    color: white; 
+}
+
+.lightcolors .myordersp {
+    color: black;
+}
+*/
+
+@media (max-width: 900px) {
+    .myOrdersOrder {
+        grid-template-columns: 0.5fr 1fr;
+    }
+
+    .trackBtn {
+        grid-column: 1 / -1;
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .paidBadge {
+        display: block;
+        margin-left: 0;
+        margin-top: 8px;
+        width: fit-content;
+    }
+}
+
+@media (max-width: 500px) {
+    .myOrdersOrder {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .confirmationContent {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dismissBtn {
+        margin-left: 0;
+        align-self: flex-end;
+    }
+
+    .checkmark {
+        font-size: 24px;
+    }
+
+    .confirmationContent h3 {
+        font-size: 16px;
+    }
+
+    .confirmationContent p {
+        font-size: 12px;
+    }
+}

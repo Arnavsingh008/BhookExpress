@@ -1,0 +1,115 @@
+.howItWorks {
+    max-width: 1140px;
+    margin: 60px auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.howItWorks h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 45px;
+    font-weight: 500;
+}
+
+.stepsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    position: relative;
+    margin-top: 40px;
+}
+
+.stepCard {
+    background: linear-gradient(135deg, #fffaf8, #fff9f7);
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.stepCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 99, 71, 0.15);
+    border-color: #ff6347;
+    background: linear-gradient(135deg, #fff3ee, #fff9f7);
+}
+
+.stepNumber {
+    font-size: 48px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ff6347, #ff4500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 15px;
+    font-family: 'Arial', sans-serif;
+}
+
+.stepCard h3 {
+    font-size: 22px;
+    color: #333;
+    margin: 15px 0;
+    font-weight: 600;
+}
+
+.stepCard p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.arrow {
+    position: absolute;
+    font-size: 28px;
+    color: #ff6347;
+    right: -45px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+    .stepsContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .arrow {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .howItWorks h2 {
+        font-size: 32px;
+    }
+
+    .stepsContainer {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .stepCard {
+        padding: 25px 15px;
+    }
+
+    .stepNumber {
+        font-size: 36px;
+    }
+
+    .stepCard h3 {
+        font-size: 18px;
+    }
+
+    .arrow {
+        display: none;
+    }
+}

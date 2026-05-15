@@ -1,0 +1,121 @@
+.specialOffers {
+    max-width: 1140px;
+    margin: 60px auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.specialOffers h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+.offersGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.offerCard {
+    background: linear-gradient(135deg, #fff4f0, #fffaf8);
+    padding: 35px 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 2px solid #ffdbca;
+    position: relative;
+    overflow: hidden;
+}
+
+.offerCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6347, #ff4500);
+}
+
+.offerCard:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(255, 99, 71, 0.2);
+    border-color: #ff6347;
+}
+
+.discountBadge {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6347, #ff4500);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(255, 99, 71, 0.3);
+}
+
+.offerCard h3 {
+    font-size: 24px;
+    color: #333;
+    margin: 15px 0;
+    font-weight: 600;
+}
+
+.description {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    min-height: 50px;
+}
+
+.ctaButton {
+    background: linear-gradient(135deg, #ff6347, #ff4500);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 99, 71, 0.3);
+    margin-top: 15px;
+    width: 100%;
+}
+
+.ctaButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(255, 99, 71, 0.4);
+}
+
+@media (max-width: 768px) {
+    .specialOffers h2 {
+        font-size: 32px;
+    }
+
+    .offersGrid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .offerCard {
+        padding: 25px 20px;
+    }
+
+    .discountBadge {
+        font-size: 20px;
+        padding: 10px 15px;
+    }
+}
