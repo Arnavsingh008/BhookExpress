@@ -10,7 +10,8 @@ import { useContext, useState } from 'react'
 import LoginPopup from './components/LoginPopup/LoginPopup'
 import Verify from './pages/Verify/Verify'
 import MyOrders from './pages/MyOrders/MyOrders'
-import { StoreContext } from '../../frontend/src/context/StoreContext';
+// import { StoreContext } from '../../frontend/src/context/StoreContext';
+import { StoreContext } from './context/StoreContext';
 
 const App = () => {
     const {setShowLogin,showLogin}=useContext(StoreContext);
