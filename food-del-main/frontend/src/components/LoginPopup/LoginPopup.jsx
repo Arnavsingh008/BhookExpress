@@ -33,50 +33,64 @@ const secretKey = "mySecretKey";
 
 const onLogin = async (event) => {
   event.preventDefault();
-  let newUrl = url;
+  try {
+    let newUrl = url;
+    if (currState === "Login") {
+      newUrl += "/api/user/login";
+    } else {
+      newUrl += "/api/user/register";
+    }
+
+    console.log("🚀 API URL:", newUrl); // Debug: Show API URL
+
+    // 🔒 Password Encrypt Karo
+    const encryptedPassword = CryptoJS.AES.encrypt(data.password, secretKey).toString();
+
+       // ✅ Encrypt email before sending
+       const encryptedEmail = CryptoJS.AES.encrypt(data.email, secretKey).toString();
+      //  console.log("Encrypted Email:", encryptedEmail); // Debugging
+
+    // const secureData = {
+    //   ...data,
+    //   email: encryptedEmail,
+    //   password: encryptedPassword, // 🛠 Encrypt password send kar rahe hain
+    // };
+
+  let secureData;
   if (currState === "Login") {
-    newUrl += "/api/user/login";
+    secureData = {
+      email: encryptedEmail,
+      password: encryptedPassword,
+    };
   } else {
-    newUrl += "/api/user/register";
+    // Sign-Up
+    secureData = {
+      name: data.name,
+      email: encryptedEmail,
+      password: encryptedPassword, // 🛠 Encrypt password send kar rahe hain
+    };
   }
 
-  // 🔒 Password Encrypt Karo
-  const encryptedPassword = CryptoJS.AES.encrypt(data.password, secretKey).toString();
+    console.log("📤 Sending request to:", newUrl); // Debug
+    const response = await axios.post(newUrl, secureData);
+    console.log("✅ Response:", response.data); // Debug
 
-     // ✅ Encrypt email before sending
-     const encryptedEmail = CryptoJS.AES.encrypt(data.email, secretKey).toString();
-    //  console.log("Encrypted Email:", encryptedEmail); // Debugging
-
-  // const secureData = {
-  //   ...data,
-  //   email: encryptedEmail,
-  //   password: encryptedPassword, // 🛠 Encrypt password send kar rahe hain
-  // };
-
-let secureData;
-if (currState === "Login") {
-  secureData = {
-    email: encryptedEmail,
-    password: encryptedPassword,
-  };
-} else {
-  // Sign-Up
-  secureData = {
-    name: data.name,
-    email: encryptedEmail,
-    password: encryptedPassword, // 🛠 Encrypt password send kar rahe hain
-  };
-}
-
-
-  const response = await axios.post(newUrl, secureData);
-
-  if (response.data.success) {
-    setToken(response.data.token);
-    localStorage.setItem("token", response.data.token);
-    setShowLogin(false);
-  } else {
-    alert(response.data.message);
+    if (response.data.success) {
+      setToken(response.data.token);
+      localStorage.setItem("token", response.data.token);
+      setShowLogin(false);
+    } else {
+      alert(response.data.message);
+    }
+  } catch (error) {
+    console.error("❌ Login/Register Error:", error);
+    if (error.response) {
+      alert("Error: " + (error.response.data.message || "Request failed"));
+    } else if (error.request) {
+      alert("⚠️ Cannot reach server. Make sure backend is running at: " + url);
+    } else {
+      alert("Error: " + error.message);
+    }
   }
 };
 
