@@ -61,7 +61,9 @@ function PlaceOrder() {
     }
     
     try {
+      console.log("🚀 Creating order with API URL:", url+"/api/order/place");
       let response = await axios.post(url+"/api/order/place",orderData,{headers:{token}})
+      console.log("✅ Order created successfully:", response.data);
       
       if (response.data.success){
         const options = {
@@ -130,8 +132,14 @@ function PlaceOrder() {
         setIsPaymentProcessing(false);
       }
     } catch (error) {
-      console.error("Order error:", error);
-      alert("❌ Error placing order. Please try again.");
+      console.error("❌ Order error:", error);
+      if (error.response) {
+        alert("❌ " + (error.response.data.message || "Error creating order"));
+      } else if (error.request) {
+        alert("⚠️ Cannot reach backend server at: " + url + "\nMake sure backend is running and Docker networking is configured correctly.");
+      } else {
+        alert("❌ Error: " + error.message);
+      }
       setIsPaymentProcessing(false);
     }
   };
