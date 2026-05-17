@@ -516,7 +516,7 @@ This project is licensed under the **MIT License** - see [LICENSE](LICENSE) file
 - **Email:** contact@bhookexpress.com
 - **Phone:** +91-9142111111
 - **Issues:** GitHub Issues
-- **Documentation:** [SETUP.md](SETUP.md), [GITHUB_PUSH_GUIDE.md](GITHUB_PUSH_GUIDE.md)
+- **Documentation:** [SETUP.md](SETUP.md)
 
 ---
 
