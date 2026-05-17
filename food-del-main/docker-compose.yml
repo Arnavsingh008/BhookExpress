@@ -6,7 +6,7 @@ services:
     ports:
       - "4000:4000"
     env_file:
-      - ./Backend/.env
+      - ./Backend/.env.docker
     volumes:
       - ./uploads:/app/uploads
     depends_on:
