@@ -8,6 +8,7 @@ Thumbs.db
 
 # Ignore environment variables and credentials
 .env
+.env.docker
 config/secrets.yml
 
 # Ignore build files
