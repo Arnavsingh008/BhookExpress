@@ -7,7 +7,7 @@
 [![React](https://img.shields.io/badge/React-18.0+-blue.svg)](https://react.dev)
 [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green.svg)](https://www.mongodb.com/cloud/atlas)
 
-🚀 **Live Demo:** [food-del-frontend-7vmr.onrender.com](https://food-del-frontend-7vmr.onrender.com)
+🚀 **Live Demo:** [bhook-frontend-dxy0.onrender.com](https://bhook-frontend-dxy0.onrender.com)
 
 ---
 
@@ -370,7 +370,7 @@ VITE_API_URL=http://localhost:4000
 ### **For Customers**
 
 1. **Sign Up/Login**
-   - Visit http://localhost:5173
+   - Visit https://bhook-frontend-dxy0.onrender.com (Production) or http://localhost:5173 (Local)
    - Create account or login
    - Cart data automatically syncs
 
@@ -399,7 +399,8 @@ VITE_API_URL=http://localhost:4000
 ### **For Admin**
 
 1. **Login to Admin Panel**
-   - Visit http://localhost:5174
+   - Visit http://localhost:5174 (Local Development)
+   - For production, admin is hosted separately
    - Use admin credentials
 
 2. **Manage Menu**
@@ -468,7 +469,7 @@ VITE_API_URL=http://localhost:4000
    ```
 4. Deploy!
 
-**Deployed URL:** `https://your-app.onrender.com`
+**Deployed URL:** `https://bhook-backend-dqjd.onrender.com`
 
 ### **Deploy Frontend (Vercel/Netlify)**
 
