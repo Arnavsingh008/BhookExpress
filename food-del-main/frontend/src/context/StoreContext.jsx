@@ -8,7 +8,7 @@ const StoreContextProvider = (props) => {
     const url = import.meta.env.VITE_API_URL || "http://localhost:4000";
 
 
-  const [food_list, setFoodList] = useState([]);
+  const [food_list, setFoodList] = useState(localFoodList);
 
   const [token, setToken] = useState('');
 
@@ -29,10 +29,11 @@ const StoreContextProvider = (props) => {
 
 const addToCart = async (itemId) => {
   let updatedCart;
-  if (!cartItems[itemId]) {
-    updatedCart = { ...cartItems, [itemId]: 1 };
+  const currentCart = cartItems || {};
+  if (!currentCart[itemId]) {
+    updatedCart = { ...currentCart, [itemId]: 1 };
   } else {
-    updatedCart = { ...cartItems, [itemId]: cartItems[itemId] + 1 };
+    updatedCart = { ...currentCart, [itemId]: currentCart[itemId] + 1 };
   }
   setCartItems(updatedCart);
 
@@ -53,11 +54,12 @@ const addToCart = async (itemId) => {
 // }  
 const removeFromCart = async (itemId) => {
   let updatedCart;
-  if (cartItems[itemId] === 1) {
-    updatedCart = { ...cartItems };
+  const currentCart = cartItems || {};
+  if (currentCart[itemId] === 1) {
+    updatedCart = { ...currentCart };
     delete updatedCart[itemId];
   } else {
-    updatedCart = { ...cartItems, [itemId]: cartItems[itemId] - 1 };
+    updatedCart = { ...currentCart, [itemId]: currentCart[itemId] - 1 };
   }
   setCartItems(updatedCart);
 
@@ -77,7 +79,9 @@ const getTotalCartAmount=()=>{
       {
           if(cartItems[item]>0){
           let itemInfo=food_list.find((product)=>product._id===item)
-          totalAmount+=itemInfo.price*cartItems[item];
+          if (itemInfo) {
+            totalAmount+=itemInfo.price*cartItems[item];
+          }
           }
       }
       return totalAmount;
