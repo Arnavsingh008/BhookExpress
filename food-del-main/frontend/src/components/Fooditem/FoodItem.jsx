@@ -4,10 +4,16 @@ import { assets } from '../../assets/assets';
 import { StoreContext } from '../../context/StoreContext';
 function FoodItem({ id, name, price, description, image }) {
 
+  // Ensure id is defined
+  if (!id) {
+    console.warn("FoodItem rendered without an id prop");
+    return null;
+  }
+
   // const [itemCount, setItemCount] = useState(0)  
  
 
-  const {cartItems,addToCart,removeFromCart,url} = useContext(StoreContext);
+  const {cartItems={},addToCart,removeFromCart,url} = useContext(StoreContext);
 
   const getImageSrc = () => {
     if (!image) return '';
@@ -44,7 +50,7 @@ function FoodItem({ id, name, price, description, image }) {
  <div className={styles.foodItemImgContainer}>
    <img  src={getImageSrc()} alt="food Image" className={styles.foodItemImage} />
 
-        {!cartItems[id]
+        {!cartItems || !cartItems[id]
         ?<img className={styles.add} onClick={()=>addToCart(id)} src={assets.add_icon_white} alt=""/> 
               :<div className={styles.foodItemCounter}>
                 <img onClick={()=>removeFromCart(id)} src={assets.remove_icon_red} alt=''/>
