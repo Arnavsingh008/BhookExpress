@@ -34,11 +34,10 @@ const handleCheckout = () => {
         <hr />
 
         {food_list.map((item, index) => {
-          if (cartItems[item._id] > 0) {
+          if (item && item._id && cartItems && cartItems[item._id] > 0) {
             return (
-              <div>
+              <div key={item._id}>
                 <div
-                  key={index}
                   className={`${styles.cartItemsTitle} ${styles.cartItemsItem}`}
                 >
                   <img src={url+"/images/"+item.image} alt="" />
