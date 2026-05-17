@@ -130,3 +130,7 @@ dist-ssr/
 .cache
 .parcel-cache
 .eslintcache
+
+# ============================================
+GITHUB_PUSH_GUIDE.md
+SETUP.md
