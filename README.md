@@ -542,6 +542,6 @@ This project is licensed under the **MIT License** - see [LICENSE](LICENSE) file
 
 ---
 
-**Made with ❤️ by BhookExpress Team**
+**Made by Arnav Singh**
 
 *Last Updated: May 2026*
